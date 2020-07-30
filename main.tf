@@ -26,12 +26,11 @@ resource "aws_s3_bucket" "default" {
     for_each = var.enable_logging == null ? [1] : []
 
     content {
-      logging {
-        target_bucket = var.logging_bucket
-        target_prefix = var.logging_prefix
-      }
+      target_bucket = var.logging_bucket
+      target_prefix = var.logging_prefix
     }
   }
+
 
   lifecycle_rule {
     id                                     = module.label.id
