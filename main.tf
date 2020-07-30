@@ -23,7 +23,7 @@ resource "aws_s3_bucket" "default" {
   }
 
   dynamic "logging" {
-    for_each = var.logging_bucket == null ? [] : var.logging_bucket
+    for_each = var.enable_logging == null ? [1] : []
 
     content {
       logging {
@@ -70,7 +70,6 @@ resource "aws_s3_bucket" "default" {
         storage_class = "STANDARD_IA"
       }
     }
-
     expiration {
       days = var.expiration_days
     }
