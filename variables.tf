@@ -209,6 +209,12 @@ variable "restrict_public_buckets" {
   description = "Set to `false` to disable the restricting of making the bucket public"
 }
 
+variable "enable_logging" {
+  type      = bool
+  default   = false
+  description = "Set to `true` to enable bike logging"
+}
+
 variable "logging_bucket" {
   type        = string
   default     = ""
