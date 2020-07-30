@@ -23,7 +23,7 @@ resource "aws_s3_bucket" "default" {
   }
 
   dynamic "logging" {
-    for_each = var.enable_logging == null ? [1] : []
+    for_each = var.enable_logging == ? [1] : []
 
     content {
       target_bucket = var.logging_bucket
