@@ -240,3 +240,16 @@ variable "replication_rules" {
   default     = null
   description = "Specifies the replication rules if S3 bucket replication is enabled"
 }
+
+variable "website_inputs" {
+
+  type = list(object({
+    index_document           = string
+    error_document           = string
+    redirect_all_requests_to = string
+    routing_rules            = string
+  }))
+  default = null
+
+  description = "Specifies the static website hosting configuration object."
+}
